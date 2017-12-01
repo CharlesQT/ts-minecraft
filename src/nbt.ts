@@ -101,6 +101,7 @@ export namespace NBT {
             read(buf, find) {
                 let listType = buf.readByte();
                 let len = buf.readInt();
+                if (len === 0) return val(listType === 0 ? NBT.TagType.List : listType, []);
                 let arr = new Array(len);
                 let visitor = visitors[listType];
                 let scope: any[] = []

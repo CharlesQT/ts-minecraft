@@ -1,0 +1,141 @@
+{
+    "Data": {
+        "RandomSeed": 4,
+        "generatorName": 8,
+        "BorderCenterZ": 6,
+        "Difficulty": 1,
+        "BorderSizeLerpTime": 4,
+        "raining": 1,
+        "DimensionData": {
+            "1": {
+                "DragonFight": {
+                    "Gateways": [
+                        3
+                    ],
+                    "DragonKilled": 1,
+                    "PreviouslyKilled": 1
+                }
+            }
+        },
+        "Time": 4,
+        "GameType": 3,
+        "MapFeatures": 1,
+        "BorderCenterX": 6,
+        "BorderDamagePerBlock": 6,
+        "BorderWarningBlocks": 6,
+        "BorderSizeLerpTarget": 6,
+        "Version": {
+            "Snapshot": 1,
+            "Id": 3,
+            "Name": 8
+        },
+        "DayTime": 4,
+        "initialized": 1,
+        "allowCommands": 1,
+        "SizeOnDisk": 4,
+        "GameRules": {
+            "doTileDrops": 8,
+            "doFireTick": 8,
+            "reducedDebugInfo": 8,
+            "naturalRegeneration": 8,
+            "disableElytraMovementCheck": 8,
+            "doMobLoot": 8,
+            "keepInventory": 8,
+            "doEntityDrops": 8,
+            "mobGriefing": 8,
+            "randomTickSpeed": 8,
+            "commandBlockOutput": 8,
+            "spawnRadius": 8,
+            "doMobSpawning": 8,
+            "logAdminCommands": 8,
+            "spectatorsGenerateChunks": 8,
+            "sendCommandFeedback": 8,
+            "doDaylightCycle": 8,
+            "showDeathMessages": 8
+        },
+        "Player": {
+            "HurtByTimestamp": 3,
+            "SleepTimer": 2,
+            "Attributes": [
+                {
+                    "Base": 6,
+                    "Name": 8
+                }
+            ],
+            "Invulnerable": 1,
+            "FallFlying": 1,
+            "PortalCooldown": 3,
+            "AbsorptionAmount": 5,
+            "abilities": {
+                "invulnerable": 1,
+                "mayfly": 1,
+                "instabuild": 1,
+                "walkSpeed": 5,
+                "mayBuild": 1,
+                "flying": 1,
+                "flySpeed": 5
+            },
+            "FallDistance": 5,
+            "DeathTime": 2,
+            "XpSeed": 3,
+            "XpTotal": 3,
+            "playerGameType": 3,
+            "Motion": [
+                6
+            ],
+            "UUIDLeast": 4,
+            "Health": 5,
+            "foodSaturationLevel": 5,
+            "Air": 2,
+            "OnGround": 1,
+            "Dimension": 3,
+            "Rotation": [
+                5
+            ],
+            "XpLevel": 3,
+            "Score": 3,
+            "UUIDMost": 4,
+            "Sleeping": 1,
+            "Pos": [
+                6
+            ],
+            "Fire": 2,
+            "XpP": 5,
+            "EnderItems": [
+                null
+            ],
+            "DataVersion": 3,
+            "foodLevel": 3,
+            "foodExhaustionLevel": 5,
+            "HurtTime": 2,
+            "SelectedItemSlot": 3,
+            "Inventory": [
+                {
+                    "Slot": 1,
+                    "id": 8,
+                    "Count": 1,
+                    "Damage": 2
+                }
+            ],
+            "foodTickTimer": 3
+        },
+        "SpawnY": 3,
+        "rainTime": 3,
+        "thunderTime": 3,
+        "SpawnZ": 3,
+        "hardcore": 1,
+        "DifficultyLocked": 1,
+        "SpawnX": 3,
+        "clearWeatherTime": 3,
+        "thundering": 1,
+        "generatorVersion": 3,
+        "version": 3,
+        "BorderSafeZone": 6,
+        "generatorOptions": 8,
+        "LastPlayed": 4,
+        "BorderWarningTime": 6,
+        "LevelName": 8,
+        "BorderSize": 6,
+        "DataVersion": 3
+    }
+}

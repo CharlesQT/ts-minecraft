@@ -1,0 +1,325 @@
+{
+    "Data": {
+        "RandomSeed": {
+            "low": 1222930802,
+            "high": 1658508597,
+            "unsigned": false
+        },
+        "generatorName": "default",
+        "BorderCenterZ": 0,
+        "Difficulty": 2,
+        "BorderSizeLerpTime": {
+            "low": 0,
+            "high": 0,
+            "unsigned": false
+        },
+        "raining": 0,
+        "DimensionData": {
+            "1": {
+                "DragonFight": {
+                    "Gateways": [
+                        15,
+                        0,
+                        14,
+                        8,
+                        16,
+                        11,
+                        1,
+                        2,
+                        10,
+                        19,
+                        3,
+                        6,
+                        7,
+                        17,
+                        9,
+                        4,
+                        18,
+                        13,
+                        12,
+                        5
+                    ],
+                    "DragonKilled": 1,
+                    "PreviouslyKilled": 1
+                }
+            }
+        },
+        "Time": {
+            "low": 43181,
+            "high": 0,
+            "unsigned": false
+        },
+        "GameType": 0,
+        "MapFeatures": 1,
+        "BorderCenterX": 0,
+        "BorderDamagePerBlock": 0.2,
+        "BorderWarningBlocks": 5,
+        "BorderSizeLerpTarget": 60000000,
+        "Version": {
+            "Snapshot": 0,
+            "Id": 512,
+            "Name": "1.10.2"
+        },
+        "DayTime": {
+            "low": 43181,
+            "high": 0,
+            "unsigned": false
+        },
+        "initialized": 1,
+        "allowCommands": 0,
+        "SizeOnDisk": {
+            "low": 0,
+            "high": 0,
+            "unsigned": false
+        },
+        "GameRules": {
+            "doTileDrops": "true",
+            "doFireTick": "true",
+            "reducedDebugInfo": "false",
+            "naturalRegeneration": "true",
+            "disableElytraMovementCheck": "false",
+            "doMobLoot": "true",
+            "keepInventory": "false",
+            "doEntityDrops": "true",
+            "mobGriefing": "true",
+            "randomTickSpeed": "3",
+            "commandBlockOutput": "true",
+            "spawnRadius": "10",
+            "doMobSpawning": "true",
+            "logAdminCommands": "true",
+            "spectatorsGenerateChunks": "true",
+            "sendCommandFeedback": "true",
+            "doDaylightCycle": "true",
+            "showDeathMessages": "true"
+        },
+        "Player": {
+            "HurtByTimestamp": 13766,
+            "SleepTimer": 0,
+            "Attributes": [
+                {
+                    "Base": 20,
+                    "Name": "generic.maxHealth"
+                },
+                {
+                    "Base": 0,
+                    "Name": "generic.knockbackResistance"
+                },
+                {
+                    "Base": 0.10000000149011612,
+                    "Name": "generic.movementSpeed"
+                },
+                {
+                    "Base": 0,
+                    "Name": "generic.armor"
+                },
+                {
+                    "Base": 0,
+                    "Name": "generic.armorToughness"
+                },
+                {
+                    "Base": 1,
+                    "Name": "generic.attackDamage"
+                },
+                {
+                    "Base": 4,
+                    "Name": "generic.attackSpeed"
+                },
+                {
+                    "Base": 0,
+                    "Name": "generic.luck"
+                }
+            ],
+            "Invulnerable": 0,
+            "FallFlying": 0,
+            "PortalCooldown": 0,
+            "AbsorptionAmount": 0,
+            "abilities": {
+                "invulnerable": 0,
+                "mayfly": 0,
+                "instabuild": 0,
+                "walkSpeed": 0.10000000149011612,
+                "mayBuild": 1,
+                "flying": 0,
+                "flySpeed": 0.05000000074505806
+            },
+            "FallDistance": 0,
+            "DeathTime": 0,
+            "XpSeed": -1352220035,
+            "XpTotal": 42,
+            "playerGameType": 0,
+            "Motion": [
+                0,
+                -0.0784000015258789,
+                0
+            ],
+            "UUIDLeast": {
+                "low": -1721031213,
+                "high": -2008126465,
+                "unsigned": false
+            },
+            "Health": 20,
+            "foodSaturationLevel": 0.20000028610229492,
+            "Air": 300,
+            "OnGround": 1,
+            "Dimension": 0,
+            "Rotation": [
+                -101.0718994140625,
+                34.03199768066406
+            ],
+            "XpLevel": 4,
+            "Score": 42,
+            "UUIDMost": {
+                "low": 1496851183,
+                "high": 111130688,
+                "unsigned": false
+            },
+            "Sleeping": 0,
+            "Pos": [
+                -137.44993676764201,
+                77,
+                165.31625398551114
+            ],
+            "Fire": -20,
+            "XpP": 0.13333344459533691,
+            "EnderItems": [],
+            "DataVersion": 512,
+            "foodLevel": 19,
+            "foodExhaustionLevel": 0.8789334893226624,
+            "HurtTime": 0,
+            "SelectedItemSlot": 5,
+            "Inventory": [
+                {
+                    "Slot": 0,
+                    "id": "minecraft:stone_pickaxe",
+                    "Count": 1,
+                    "Damage": 53
+                },
+                {
+                    "Slot": 1,
+                    "id": "minecraft:stone_axe",
+                    "Count": 1,
+                    "Damage": 42
+                },
+                {
+                    "Slot": 2,
+                    "id": "minecraft:stone_hoe",
+                    "Count": 1,
+                    "Damage": 13
+                },
+                {
+                    "Slot": 3,
+                    "id": "minecraft:torch",
+                    "Count": 7,
+                    "Damage": 0
+                },
+                {
+                    "Slot": 4,
+                    "id": "minecraft:feather",
+                    "Count": 2,
+                    "Damage": 0
+                },
+                {
+                    "Slot": 5,
+                    "id": "minecraft:dirt",
+                    "Count": 18,
+                    "Damage": 0
+                },
+                {
+                    "Slot": 7,
+                    "id": "minecraft:spruce_door",
+                    "Count": 3,
+                    "Damage": 0
+                },
+                {
+                    "Slot": 8,
+                    "id": "minecraft:wooden_pickaxe",
+                    "Count": 1,
+                    "Damage": 14
+                },
+                {
+                    "Slot": 9,
+                    "id": "minecraft:arrow",
+                    "Count": 2,
+                    "Damage": 0
+                },
+                {
+                    "Slot": 10,
+                    "id": "minecraft:rotten_flesh",
+                    "Count": 2,
+                    "Damage": 0
+                },
+                {
+                    "Slot": 11,
+                    "id": "minecraft:cobblestone",
+                    "Count": 8,
+                    "Damage": 0
+                },
+                {
+                    "Slot": 12,
+                    "id": "minecraft:gravel",
+                    "Count": 12,
+                    "Damage": 0
+                },
+                {
+                    "Slot": 13,
+                    "id": "minecraft:log",
+                    "Count": 12,
+                    "Damage": 1
+                },
+                {
+                    "Slot": 14,
+                    "id": "minecraft:flint",
+                    "Count": 1,
+                    "Damage": 0
+                },
+                {
+                    "Slot": 15,
+                    "id": "minecraft:planks",
+                    "Count": 1,
+                    "Damage": 1
+                },
+                {
+                    "Slot": 17,
+                    "id": "minecraft:stick",
+                    "Count": 2,
+                    "Damage": 0
+                },
+                {
+                    "Slot": 18,
+                    "id": "minecraft:coal",
+                    "Count": 27,
+                    "Damage": 0
+                },
+                {
+                    "Slot": 35,
+                    "id": "minecraft:cooked_porkchop",
+                    "Count": 5,
+                    "Damage": 0
+                }
+            ],
+            "foodTickTimer": 0
+        },
+        "SpawnY": 64,
+        "rainTime": 92428,
+        "thunderTime": 69356,
+        "SpawnZ": 150,
+        "hardcore": 0,
+        "DifficultyLocked": 0,
+        "SpawnX": -135,
+        "clearWeatherTime": 0,
+        "thundering": 0,
+        "generatorVersion": 1,
+        "version": 19133,
+        "BorderSafeZone": 5,
+        "generatorOptions": "",
+        "LastPlayed": {
+            "low": -544046890,
+            "high": 348,
+            "unsigned": false
+        },
+        "BorderWarningTime": 15,
+        "LevelName": "Testa",
+        "BorderSize": 60000000,
+        "DataVersion": 512
+    }
+}

@@ -14,6 +14,13 @@ export enum GameType {
     SPECTATOR = 3
 }
 
+export enum Difficulty {
+    Peaseful = 0,
+    Easy = 1,
+    Normal = 2,
+    Hard = 3,
+}
+
 export namespace GameType {
     const _internal_map: { [key: number]: GameType } = {}
     _internal_map[-1] = GameType.NON
