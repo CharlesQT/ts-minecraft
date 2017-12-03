@@ -195,6 +195,7 @@ class Dispatcher implements Handler<ByteBuffer> {
     }
 }
 
+
 export class MinecraftNetwork {
     private inbound: Pipeline;
     private outbound: Pipeline;
@@ -221,7 +222,7 @@ export class MinecraftNetwork {
         });
     }
 
-    register(packetId: number, type: Class | string, side: Side, coder: PacketCoder<any>): this {
+    register(packetId: number, type: Class | string, side: Side[] | Side, coder: PacketCoder<any>): this {
         const typeName = typeof type === 'string' ? type : type.prototype.constructor.name;
         if (this.coderById[packetId]) throw new Error()
         if (this.coderByType[typeName]) throw new Error()
@@ -236,7 +237,7 @@ export class MinecraftNetwork {
         return this;
     }
 
-    Packet(id: number, side: Side) {
+    Packet(id: number, side: Side[] | Side) {
         return (constructor: Function) => {
             const fields = Reflect.getMetadata('packet:fields', constructor.prototype) || []
             this.register(id, constructor.name, side, {

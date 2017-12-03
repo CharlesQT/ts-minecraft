@@ -132,5 +132,4 @@ export default function create(net: MinecraftNetwork) {
             throw new Error("Method not implemented.");
         }
     }
-
 }

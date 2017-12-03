@@ -108,10 +108,22 @@ const Short: PacketCoder<number> = {
     encode: (buffer, inst) => { buffer.writeShort(inst) }
 }
 
-const VarLong: PacketCoder<Long> = {
+const UShort: PacketCoder<number> = {
+    create: () => 0,
+    decode: (buffer, inst) => buffer.readUint16(),
+    encode: (buffer, inst) => { buffer.writeUint16(inst) }
+}
+
+const _Long: PacketCoder<Long> = {
     create: () => new Long(0),
     decode: (buffer, inst) => buffer.readLong(),
     encode: (buffer, inst) => { buffer.writeInt64(inst) }
+}
+
+const VarLong: PacketCoder<Long> = {
+    create: () => new Long(0),
+    decode: (buffer, inst) => buffer.readVarint64(),
+    encode: (buffer, inst) => { buffer.writeVarint64(inst) }
 }
 
 const String: PacketCoder<string> = {
@@ -135,6 +147,7 @@ const Json: PacketCoder<any> = {
         String.encode(buffer, JSON.stringify(inst))
     }
 }
+
 
 const Slot: PacketCoder<SlotData> = {
     create: () => ({ blockId: 0 }),
@@ -161,6 +174,26 @@ const Slot: PacketCoder<SlotData> = {
     }
 }
 
-export default {
-    Json, VarInt, Long, Slot, VarLong, String, Short, UByte, Byte, Bool, Float, Double, Position: _Position, UUID, Int
+const ByteArray: PacketCoder<Int8Array> = {
+    create: () => new Int8Array(0),
+    decode: (buffer, inst) => {
+        const len = buffer.readVarint32();
+        const arr = new Int8Array(len);
+        for (let i = 0; i < len; i += 1) {
+            arr[i] = buffer.readByte();
+        }
+        return arr;
+    },
+    encode: (buffer, inst) => {
+        const len = inst.length;
+        for (let i = 0; i < len; i += 1) {
+            buffer.writeByte(inst[i])
+        }
+    }
 }
+
+const Coders = {
+    Json, VarInt, ByteArray, Long: _Long, Slot, VarLong, String, Short, UByte, Byte, Bool, Float, Double, Position: _Position, UUID, Int
+}
+
+export default Coders
