@@ -1,4 +1,4 @@
-import { MinecraftNetwork, ClientPacket, BiPacket, ServerPacket, PacketCoder } from './network'
+import { Bound, ClientPacket, BiPacket, ServerPacket, PacketCoder } from './network'
 import { Socket, connect } from 'net';
 import { v4 } from 'uuid'
 import * as Long from 'long';

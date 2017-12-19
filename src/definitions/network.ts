@@ -145,9 +145,9 @@ class Compressor implements Handler<ByteBuffer> {
 }
 
 export interface PacketCoder<T> {
-    create: () => T
-    encode: (buffer: ByteBuffer, data: T, context?: any) => void
-    decode: (buffer: ByteBuffer, data: T, context?: any) => T
+    readonly create: () => T
+    readonly encode: (buffer: ByteBuffer, data: T, context?: any) => void
+    readonly decode: (buffer: ByteBuffer, data: T, context?: any) => T
 }
 
 export interface ClientPacket {
@@ -183,43 +183,42 @@ class Dispatcher implements Handler<ByteBuffer> {
         if (coder) {
             const inst = coder.create();
             coder.decode(message, inst);
-            switch (context.context.side) {
-                case 'client':
-                    inst.onClient()
-                case 'server':
-                    inst.onServer()
-            }
+            context.forward(inst);
+            // switch (context.context.side) {
+            //     case 'client':
+            //         inst.onClient()
+            //     case 'server':
+            //         inst.onServer()
+            // }
         } else {
             console.error(`Unknown packet ${packetContent}.`)
         }
     }
 }
 
-
-export class MinecraftNetwork {
+export class Bound {
     private inbound: Pipeline;
     private outbound: Pipeline;
     private coderById: { [packetId: number]: PacketCoder<any> } = {};
     private coderByType: { [packetType: string]: PacketCoder<any> } = {};
 
-    constructor(readonly side: Side, readonly socket: Socket) {
+    constructor(readonly side: Side, readonly socket: Socket, handlePacket: (packet: any) => void) {
         this.inbound = new Pipeline();
         this.outbound = new Pipeline();
 
         this.inbound.addFirst(new Decoder())
             .addLast(new Decompressor())
-            .addLast(new Dispatcher(this.coderById));
+            .addLast(new Dispatcher(this.coderById))
+            .addLast({
+                handle(message, context) { handlePacket(message) }
+            });
         this.outbound.addFirst(new Classifier(this.coderByType))
             .addLast(new Compressor())
             .addLast(new Encoder())
             .addLast({
-                handle(message: ByteBuffer, context: Context): void {
-                    socket.write(Buffer.from(message.buffer))
-                }
+                handle(message, context) { socket.write(Buffer.from(message.buffer)); }
             });
-        socket.on('data', (data) => {
-            this.inbound.push(data);
-        });
+        socket.on('data', (data) => { this.inbound.push(data); });
     }
 
     register(packetId: number, type: Class | string, side: Side[] | Side, coder: PacketCoder<any>): this {
@@ -235,40 +234,5 @@ export class MinecraftNetwork {
     send(message: any): this {
         this.outbound.push(message);
         return this;
-    }
-
-    Packet(id: number, side: Side[] | Side) {
-        return (constructor: Function) => {
-            const fields = Reflect.getMetadata('packet:fields', constructor.prototype) || []
-            this.register(id, constructor.name, side, {
-                encode(buffer, value) {
-                    fields.forEach((cod: any) => {
-                        cod.type.encode(buffer, value[cod.name]);
-                    })
-                },
-                decode(buffer, value) {
-                    fields.forEach((cod: any) => {
-                        const inst = cod.type.create();
-                        try {
-                            value[cod.name] = cod.type.decode(buffer, inst);
-                        } catch (e) {
-                            console.error(new Error(`Exception during reciving packet [${id}]${constructor.name}`))
-                            console.error(e)
-                            value[cod.name] = inst;
-                        }
-                    })
-                },
-                create: () => constructor(),
-            })
-        }
-    }
-
-    Type(type: any) {
-        return (target: any, key: string) => {
-            if (!Reflect.hasMetadata('packet:fields', target)) {
-                Reflect.defineMetadata('packet:fields', [], target)
-            }
-            Reflect.getMetadata('packet:fields', target).push({ name: key, type })
-        }
     }
 }

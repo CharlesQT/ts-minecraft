@@ -5,7 +5,7 @@ import Coders from '../coders'
 const Packet = (id: number) => packet(id, 'login')
 
 @Packet(0x00)
-class LoginStart implements ServerPacket {
+export class LoginStart implements ServerPacket {
     @Field(Coders.String)
     playerName: string
 
@@ -16,7 +16,7 @@ class LoginStart implements ServerPacket {
 
 
 @Packet(0x00)
-class Disconnect implements ClientPacket {
+export class Disconnect implements ClientPacket {
     @Field(Coders.Json)
     data: any
     onClient(): void {
@@ -25,7 +25,7 @@ class Disconnect implements ClientPacket {
 }
 
 @Packet(0x01)
-class OnEncrypt implements BiPacket {
+export class OnEncrypt implements BiPacket {
 
     @Field(Coders.ByteArray)
     secret: Int8Array
@@ -41,7 +41,7 @@ class OnEncrypt implements BiPacket {
 
 
 @Packet(0x02)
-class LoginSucsess implements ClientPacket {
+export class LoginSucsess implements ClientPacket {
     @Field(Coders.String)
     uuid: string
     @Field(Coders.String)
@@ -52,7 +52,7 @@ class LoginSucsess implements ClientPacket {
 }
 
 @Packet(0x03)
-class EnableCompression implements ClientPacket {
+export class EnableCompression implements ClientPacket {
     @Field(Coders.VarInt)
     threadhold: number
     onClient(): void {

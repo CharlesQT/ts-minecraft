@@ -1,4 +1,4 @@
-import { MinecraftNetwork, ServerPacket, ClientPacket, BiPacket, Side } from "../network";
+import { Bound, ServerPacket, ClientPacket, BiPacket, Side } from "../network";
 import Coders from '../coders'
 import { Server } from "../../server";
 import { Packet as packet, Field } from "./registry";
@@ -6,7 +6,7 @@ import { Packet as packet, Field } from "./registry";
 const Packet = (num: number) => packet(num, 'status')
 
 @Packet(0x00)
-class ServerQuery implements BiPacket {
+export class ServerQuery implements BiPacket {
     @Field(Coders.Json, 'client')
     status: Server.StatusFrame
 
@@ -20,7 +20,7 @@ class ServerQuery implements BiPacket {
 }
 
 @Packet(0x01)
-class Ping implements BiPacket {
+export class Ping implements BiPacket {
     @Field(Coders.Long)
     ping: Long
 
