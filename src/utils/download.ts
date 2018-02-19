@@ -103,7 +103,15 @@ catch (e) {
 }
 
 import Task, { AbstractTask } from './task'
+import Tasks from 'treelike-task'
 
+export function downloadTask(url: string, file?: string) {
+    return (context: Tasks.Context) => {
+        return download(url, file, (progress, total) => {
+            context.update(progress, total);
+        })
+    }
+}
 export class DownloadTask extends AbstractTask<void | Buffer> {
     constructor(id: string, readonly url: string, readonly file?: string) { super(id); }
     execute(context: Task.Context): Promise<void | Buffer> {
